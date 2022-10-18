@@ -1,0 +1,53 @@
+.menu{
+  &__nav{
+    transition: 0.3s;
+    @include breakpoint($phone){
+      position: fixed;
+      left: -100vw;
+      top: 75px;
+      width: 100vw;
+      background-color: $c_blue;
+      z-index: 8;
+    }
+    ul{
+      li{
+        padding: 0 30px;
+        display: inline;
+        &:first-child{
+          padding-left: 0;
+        }
+        &:last-child{
+          padding-right: 0;
+        }
+        a{
+          text-decoration: none;
+          text-transform: uppercase;
+          color: #fff;
+          font-size: 13px;
+          padding-bottom: 5px;
+          display: inline-block;
+          transition: 0.3s;
+          &:hover, &:focus,{
+            color: $c_blue;
+            @include breakpoint($phone){
+              color: $c_dark;
+            }
+          }
+          @include breakpoint($phone){
+            display: block;
+            text-align: center;
+            padding: 20px;
+          }
+        }
+        @include breakpoint($phone){
+          display: block;
+          border-bottom: 1px solid $c_dark;
+          padding: 0;
+        }
+      }
+    }
+  }
+  &__nav.open{
+    left: 0;
+  }
+}
